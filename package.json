@@ -1,0 +1,12 @@
+{
+  "name": "crud-express",
+  "version": "1.0.0",
+  "description": "Crud en express usando array",
+  "main": "index.js",
+  "repository": "https://github.com/spastorsegura/backend.git",
+  "author": "spastorsegura <67179586+spastorsegura@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
