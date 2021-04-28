@@ -11,5 +11,6 @@ export const conexion=new Sequelize(
         timezone:"-05:00",//no funciona en SQLITE
         dialectOptions:{
             dateString:true,
-        }
+        },
+        logging:false,
     })

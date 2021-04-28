@@ -1,17 +1,23 @@
 import express from "express"
 import {json} from "body-parser";
 import {conexion} from "./sequelize"
-import * as prueba from "./relaciones";
+import { producto_router } from "../routes/producto";
 
 export default class Server{
     constructor(){
         this.app=express();
         this.port=process.env.PORT || 8000;
         this.bodyParser();
+        this.rutas();
     }
 
     bodyParser(){
         this.app.use(json());
+    }
+
+    rutas(){
+        //se puede agregar un middleware, "/api"
+        this.app.use(producto_router);
     }
 
     start(){

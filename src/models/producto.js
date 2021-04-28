@@ -14,10 +14,12 @@ conexion.define("producto",{
     productoNombre:{
         type:DataTypes.STRING(45),
         field:'nombre',
+        allowNull:false
     },
     productoPrecio:{
         type:DataTypes.DECIMAL(5,2),
         field:"precio",
+        allowNull:false
     },
 },{
     tableName:"productos",
