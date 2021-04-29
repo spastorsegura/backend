@@ -2,6 +2,7 @@ import express from "express"
 import {json} from "body-parser";
 import {conexion} from "./sequelize"
 import { producto_router } from "../routes/producto";
+import { usuario_router } from "../routes/usuario";
 
 export default class Server{
     constructor(){
@@ -18,6 +19,7 @@ export default class Server{
     rutas(){
         //se puede agregar un middleware, "/api"
         this.app.use(producto_router);
+        this.app.use(usuario_router);
     }
 
     start(){

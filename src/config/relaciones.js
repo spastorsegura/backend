@@ -12,6 +12,9 @@ export const ProductoEstante = producto_estante_model();
 export const Rol = rol_model();
 export const Usuario=usuario_model();
 
+//Solo para resetear solo usuarios
+// Usuario.sync({force:true});
+
 Categoria.hasMany(Estante,{
     foreignKey:{
         name:"categorias_id",
