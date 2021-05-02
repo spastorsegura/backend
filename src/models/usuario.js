@@ -1,3 +1,4 @@
+require("dotenv").config();
 import { DataTypes } from "sequelize";
 import { conexion } from "../config/sequelize";
 import { hashSync, compareSync } from "bcrypt";
@@ -27,6 +28,7 @@ export default () => {
       usuarioCorreo: {
         field: "correo",
         type: DataTypes.STRING(25),
+        unique:true,
         validate: {
           isEmail: true,
         },
@@ -57,7 +59,7 @@ export default () => {
       usuarioCorreo: this.usuarioCorreo,
     };
     const password = "password";
-    return sign(payload, password, { expiresIn: "1h" });
+    return sign(payload, process.env.JWT_SECRET, { expiresIn: "1h" });
   };
 
   return usuario;
