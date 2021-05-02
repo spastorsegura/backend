@@ -54,3 +54,8 @@ Rol.hasMany(Usuario,{
 Usuario.belongsTo(Rol,{
     foreignKey:"roles_id",
 })
+
+// Usuario.sync({force:true});
+// Estante.sync({force:true})
+// Categoria.sync({force:true})
+// Categoria.sync({alter:true})

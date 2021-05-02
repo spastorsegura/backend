@@ -3,6 +3,7 @@ import {json} from "body-parser";
 import {conexion} from "./sequelize"
 import { producto_router } from "../routes/producto";
 import { usuario_router } from "../routes/usuario";
+import { categoria_router } from "../routes/categoria";
 
 export default class Server{
     constructor(){
@@ -20,6 +21,7 @@ export default class Server{
         //se puede agregar un middleware, "/api"
         this.app.use(producto_router);
         this.app.use(usuario_router);
+        this.app.use(categoria_router);
     }
 
     start(){

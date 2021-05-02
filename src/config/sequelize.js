@@ -12,5 +12,5 @@ export const conexion=new Sequelize(
         dialectOptions:{
             dateString:true,
         },
-        logging:false,
+        logging:true,
     })
