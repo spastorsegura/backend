@@ -36,6 +36,7 @@ class Server {
     this.app.use(_producto.producto_router);
     this.app.use(_usuario.usuario_router);
     this.app.use(_categoria.categoria_router);
+    this.app.get("/", (req, res) => res.send("Bienvenido a mi API"));
   }
 
   start() {
@@ -45,7 +46,7 @@ class Server {
       try {
         //no usar force(borra y vuelve a cargar {force:true}), sino alter(solo carga cambios)
         await _sequelize.conexion.sync();
-        console.log('Base de datos sincronizada correctamente');
+        console.log("Base de datos sincronizada correctamente");
       } catch (error) {
         console.error(error);
       }
