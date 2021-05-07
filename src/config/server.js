@@ -1,5 +1,7 @@
 import express from "express";
 import { json } from "body-parser";
+import { usuario_router } from "../routes/usuario";
+
 require("dotenv").config();
 
 export default class Server {
@@ -11,17 +13,22 @@ export default class Server {
     this.rutas();
   }
   CORS() {
-    this.app.use((req,res,next) => {
-        res.header("Access-Control-Allow-Origin","*")
-        res.header("Access-Control-Allow-Header","Content-type","Authorization")
-        res.header("Access-Control-Allow-Methods","GET","POST","PUT")
-        next();
+    this.app.use((req, res, next) => {
+      res.header("Access-Control-Allow-Origin", "*");
+      res.header(
+        "Access-Control-Allow-Header",
+        "Content-type",
+        "Authorization"
+      );
+      res.header("Access-Control-Allow-Methods", "GET", "POST", "PUT");
+      next();
     });
   }
   bodyParser() {
     this.app.use(json());
   }
   rutas() {
+    this.app.use(usuario_router);
     this.app.get("/", (req, res) => {
       res.send("Bienvenido a mi API");
     });
