@@ -1,5 +1,5 @@
 {
-  "name": "reservas-mongo",
+  "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/spastorsegura/backend.git",
@@ -14,11 +14,10 @@
     "@babel/cli": "^7.13.16",
     "@babel/core": "^7.14.0",
     "@babel/node": "^7.13.13",
-    "@babel/preset-env": "^7.14.0",
-    "dotenv": "^8.2.0"
+    "@babel/preset-env": "^7.14.1",
+    "dotenv": "^9.0.0"
   },
   "dependencies": {
-    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "mongoose": "^5.12.7"

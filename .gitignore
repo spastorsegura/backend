@@ -1,2 +1,3 @@
 node_modules/
+src/credenciales_firebase.json
 .env
